@@ -1,9 +1,9 @@
 #+TITLE: Intro to Git
 #+SUBTITLE: A non comprehensive guide to `git`
-#+COMPANY: CouponDunia
-#+DATE: 2016/06/30
+#+COMPANY: UF-ACM
+#+DATE: 2016/10/18
 #+AUTHOR: Anurag Peshne
-#+EMAIL: anurag.peshne@coupondunia.in
+#+EMAIL: anurag.peshne@ufl.edu
 #+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
 #+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
 #+OPTIONS: e:t email:t f:t inline:t num:nil p:nil pri:nil stat:t
@@ -14,7 +14,7 @@
 #+KEYWORDS:
 #+LANGUAGE: en
 #+SELECT_TAGS: export
-#+ICON: images/git-icon.svg
+#+ICON: images/git-icon.png
 
 * VCS
   :PROPERTIES:
@@ -25,7 +25,7 @@
 ** Video Games
    #+ATTR_HTML: :class build fade
    - Think of editing your code or document as playing a game
-   - Saving using Editor over writes previoud save
+   - Saving using Editor over writes previous save
      - It's like saving in just one slot
      - Can't go back to previous save
      - What if current save is unwinnable
@@ -43,7 +43,7 @@
    - You can /Save as/ a different file, maybe in different folder
    - Multiple versions of same document becomes unmanageable
      - Specially if there the number of files is large
-       - PriceComparison repo has a little more than 10k files
+       - Even a simple project has a little more than 10k files
    - Version Control Systems do this and lot more for us
    - If something goes bad, we can re visit older version
    - VCS compresses files and provides a nice interface to manage different versions
@@ -84,8 +84,8 @@
    - Repository
    - Summary
     #+BEGIN_CENTER
-    #+ATTR_HTML: :width 720px
-    [[file:images/3states.svg]]
+    #+ATTR_HTML: :width 520px
+    [[file:images/3states.png]]
     #+END_CENTER
 * Basic Commands
   :PROPERTIES:
@@ -167,7 +167,7 @@
      ~git push [remote branch]~
    - Remotes are just aliases.
 
-     ~git push https://github.com/CouponDunia/PCScraper.git master~
+     ~git push https://github.com/dummyUser/dummyProject.git master~
 ** Undo/Redo
    :PROPERTIES:
    :ARTICLE:  smaller
@@ -270,19 +270,19 @@
 
     *   4d19eff Merge branch 'botTest' into alert_system
     | |\
-    | | *   5cb042b Merge branch 'master' of https://github.com/CouponDunia/PCScraper into botTest
+    | | *   5cb042b Merge branch 'master' of https://github.com/dummyUser/dummyProject into botTest
     | | |\
     | * | \   0e84ec7 Merge remote-tracking branch 'origin/botTest' into alert_system
     | |\ \ \
     | | |/ /
-    | * | |   dd8a3c3 Merge branch 'master' of https://github.com/CouponDunia/PCScraper into alert_system
+    | * | |   dd8a3c3 Merge branch 'master' of https://github.com/dummyUser/dummyProject into alert_system
     | |\ \ \
     | | | |/
     | | |/|
     | * | | c1d4e37 alert after crawling stage
-    | * | |   3b9e0ec Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | * | |   3b9e0ec Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
     | |\ \ \
-    | | * \ \   39bebf9 Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | | * \ \   39bebf9 Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
     | | |\ \ \
     | | * | | | bc9c280 alert for solr
     | * | | | | 735ef01 operand type fix
@@ -291,7 +291,7 @@
     | * | | | ee4fe92 ntitle check
     | * | | | 329f26f removed normalize insertion
     | |/ / /
-    | * | |   6b4b326 Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | * | |   6b4b326 Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
     | |\ \ \
     | | * | | f0dfe17 alert for url creator script
     | * | | | 286d567 check for normalize table data
@@ -317,7 +317,7 @@
      ~git remote -v~
    - Adding Remote
 
-     ~git remote add cd https://github.com/CouponDunia/PCScraper.git~
+     ~git remote add cd https://github.com/dummyUser/dummyProject.git~
    - Inspect
 
      ~git remote show origin~
@@ -414,7 +414,7 @@
     author anuja780 <anuja.gupta@coupondunia.in> 1467094050 +0530
     committer GitHub <noreply@github.com> 1467094050 +0530
 
-    Merge pull request #107 from CouponDunia/common_model_remove
+    Merge pull request #107 from dummyUser/common_model_remove
 
     running camera automated
     #+END_SRC
