@@ -1,0 +1,490 @@
+#+TITLE: Intro to Git
+#+SUBTITLE: A non comprehensive guide to `git`
+#+COMPANY: CouponDunia
+#+DATE: 2016/06/30
+#+AUTHOR: Anurag Peshne
+#+EMAIL: anurag.peshne@coupondunia.in
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:t f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+CREATOR: Emacs 24.5.1 (Org mode 8.2.10)
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+ICON: images/git-icon.svg
+
+* VCS
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Video Games
+   #+ATTR_HTML: :class build fade
+   - Think of editing your code or document as playing a game
+   - Saving using Editor over writes previoud save
+     - It's like saving in just one slot
+     - Can't go back to previous save
+     - What if current save is unwinnable
+     - Have to start again from beginning
+** Some Cute Things
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 600px
+   [[file:images/cuteThings.png]]
+   #+END_CENTER
+** Save As
+   #+ATTR_HTML: :class build fade
+   - You can /Save as/ a different file, maybe in different folder
+   - Multiple versions of same document becomes unmanageable
+     - Specially if there the number of files is large
+       - PriceComparison repo has a little more than 10k files
+   - Version Control Systems do this and lot more for us
+   - If something goes bad, we can re visit older version
+   - VCS compresses files and provides a nice interface to manage different versions
+** Distributed Version Control System
+   #+ATTR_HTML: :class build fade
+   - Helps in collaborating
+   - Everyone has the whole repository in his computer
+     - No need to checkout particular file (SVN)
+   - On merging all the commits are synchronized automatically
+* Git
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** A little history
+   #+ATTR_HTML: :class build fade
+   - Created by Linus Torvalds
+   - Some of the goals of the system were:
+     - Speed
+     - Simple Design
+     - Support for non-linear development (thousands of parallel branches)
+     - Fully Distributed
+     - Able to handle large projects like the Linux efficiently
+** Basics
+   #+ATTR_HTML: :class build fade
+   - Snapshots, not Differences
+   - Nearly everything is local
+     - No need of network access for most of the work
+   - Git has integrity
+     - Everything is hashed
+     - Data can't get corrupted without git knowing it
+   - No central authority or canonical repository
+** The three states
+   #+ATTR_HTML: :class build fade
+   - Working Directory
+   - Staging Area
+   - Repository
+   - Summary
+    #+BEGIN_CENTER
+    #+ATTR_HTML: :width 720px
+    [[file:images/3states.svg]]
+    #+END_CENTER
+* Basic Commands
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Clone/Init
+   #+ATTR_HTML: :class build fade
+   - Creating a repository:
+     #+BEGIN_SRC shell
+     $ git init
+     Initialized empty Git repository in /mount/pt/dummy/folder
+
+     $ ls -a
+     . .. .git
+     #+END_SRC
+   - Cloning an existing repository
+    #+BEGIN_SRC shell
+    # clone over https
+    git clone https://github.com/dummyUser/dummyRepo.git
+    # clone local repo
+    git clone ~/code/dummyRepo
+    #+END_SRC
+** Editing
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   - Status
+
+     ~git status~
+   - Track new files
+    #+BEGIN_SRC shell
+        git add newFile1
+        git add src*
+    #+END_SRC
+   - Ignoring files (temp files, editor backup files, db configs)
+
+     ~.gitignore~
+   - See what's changed
+
+     ~git diff~
+   - Undo changes
+
+     ~git checkout -- file~
+** Committing, Unstaging
+   #+ATTR_HTML: :class build fade
+   - Staged wrong file?
+
+     ~git reset HEAD file~
+   - Commit
+     #+BEGIN_SRC shell
+     # no flags: opens up editor for commit message
+     git commit
+     # pass in commit message directly
+     git commit -m "message".
+     # add and commit all files in previous commits
+     git commit -a
+     #+END_SRC
+** Conflicts
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_SRC shell
+   <<<<<<< HEAD
+   <link type="text/css" rel="stylesheet" media="all" href="style.css" />
+   =======
+       <!-- no style -->
+   >>>>>>> master
+   #+END_SRC
+** Push/Pull
+   #+ATTR_HTML: :class build fade
+   - Getting latest code
+
+     ~git pull [remote branch]~
+   - Updating github
+
+     ~git push [remote branch]~
+   - Remotes are just aliases.
+
+     ~git push https://github.com/CouponDunia/PCScraper.git master~
+** Undo/Redo
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   - Want to see changes
+
+     ~git log~
+   - Undo *permanently*
+
+     ~git reset --hard <ref/hash>~
+   - Undo commit
+
+     ~git reset --soft <ref/hash>~
+   - Hop to an old state briefly
+
+     ~git checkout <ref/hash>~
+** Branching
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   - Show all branches
+
+     ~git branch~
+   - Switch to another branch
+
+     ~git checkout <branch>~
+   - Create a new branch
+     #+BEGIN_SRC shell
+     git branch <new branch name> # this doesn't switches you to the new branch
+     git checkout -b <new branch name> #create branch and switch to it
+     #+END_SRC
+   - Delete branch
+     #+BEGIN_SRC shell
+     # deleting local branch
+     git branch -D <branchName>
+     # deleting remote branch
+     git push origin --delete <branchName>
+     #+END_SRC
+** Merging
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   1. Merge ~master~ into your branch
+     #+BEGIN_SRC shell
+     git checkout <yourBranch>
+     git merge master
+     #+END_SRC
+   2. Resolve conflicts (if any)
+   3. Send pull request
+   4. Merge Squash (~git merge --squash~): create a single commit on top of the
+      current branch whose effect is the same as merging another branch
+* Demo
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Visualize
+  - [[http://onlywei.github.io/explain-git-with-d3/#zen][Git Visualization]]
+    - git commit
+    - git branch
+    - git checkout <branch>
+    - git checkout <ref>
+    - git merge
+* Not So Basic Commands
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Stash
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   1. Working on something and some urgent thing pops up
+
+     ~git stash #saves the work in the current branch~
+   1. Branch out to another branch
+   1. fix the urgent thing
+   1. merge
+   1. Checkout to old branch
+   1. Pop
+
+      ~git stash pop~
+   - Stash options:
+     - ~git stash list~
+     - ~git stash apply~
+     - ~git stash drop~
+     - ~pop~ = ~apply~ last + ~drop~
+** Commit Graph
+   :PROPERTIES:
+   :ARTICLE: smaller
+   :END:
+   #+BEGIN_SRC shell
+   $ git log --graph --decorate --oneline --all﻿
+
+    *   4d19eff Merge branch 'botTest' into alert_system
+    | |\
+    | | *   5cb042b Merge branch 'master' of https://github.com/CouponDunia/PCScraper into botTest
+    | | |\
+    | * | \   0e84ec7 Merge remote-tracking branch 'origin/botTest' into alert_system
+    | |\ \ \
+    | | |/ /
+    | * | |   dd8a3c3 Merge branch 'master' of https://github.com/CouponDunia/PCScraper into alert_system
+    | |\ \ \
+    | | | |/
+    | | |/|
+    | * | | c1d4e37 alert after crawling stage
+    | * | |   3b9e0ec Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | |\ \ \
+    | | * \ \   39bebf9 Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | | |\ \ \
+    | | * | | | bc9c280 alert for solr
+    | * | | | | 735ef01 operand type fix
+    | | |/ / /
+    | |/| | |
+    | * | | | ee4fe92 ntitle check
+    | * | | | 329f26f removed normalize insertion
+    | |/ / /
+    | * | |   6b4b326 Merge branch 'alert_system' of https://github.com/CouponDunia/PCScraper into alert_system
+    | |\ \ \
+    | | * | | f0dfe17 alert for url creator script
+    | * | | | 286d567 check for normalize table data
+   #+END_SRC
+** References
+   #+ATTR_HTML: :class build fade
+   - Pointer to commit graph
+   - Branches are references:
+
+     ~more .git/refs/heads~
+   - ~HEAD~: symbolic reference to current branch
+
+     ~more .git/HEAD~
+   - Tags, like branch, but never moves
+   - ~FETCH_HEAD~
+** Remotes
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   - Show all remotes
+
+     ~git remote -v~
+   - Adding Remote
+
+     ~git remote add cd https://github.com/CouponDunia/PCScraper.git~
+   - Inspect
+
+     ~git remote show origin~
+   - Rename
+
+     ~git remote rename origin cd~
+** Fetch
+   #+ATTR_HTML: :class build fade
+   - Fetch branches and/or tags (collectively, "refs") from one or more other repositories
+   - Updates ~.git/FETCH_HEAD~
+   - ~git pull~ = ~git fetch~ + ~git merge~
+   - ~git diff FETCH_HEAD..master~
+** Ranges
+   #+ATTR_HTML: :class build fade
+   - ~^~ : Parent
+     - ~^^~: Parent of parent
+   - ~\~~: n^th parent
+     - ~git reset --hard HEAD~10~: revert to 10th parent of ~HEAD~
+   - ~git diff master..HEAD~: changes in current branch
+* Git Internals
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** ~.git~ structure
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_SRC shell
+   $ tree -a -L 2
+    .
+    ├── .git
+    │   ├── COMMIT_EDITMSG
+    │   ├── HEAD
+    │   ├── branches
+    │   ├── config
+    │   ├── description
+    │   ├── hooks
+    │   ├── index
+    │   ├── info
+    │   ├── logs
+    │   ├── objects
+    │   ├── packed-refs
+    │   └── refs
+    └── a.txt
+   #+END_SRC
+** How files are stored
+   #+ATTR_HTML: :class build fade
+   - Git doesn't store deltas, stores full files in compressed format.
+   - Hashes the file content and stores in a key-value pair.
+   - ~git add file~ compresses and stores the file in ~.git/objects~ and updates
+     ~.git/index~ with its checksum.
+** Everything is checksum
+   #+ATTR_HTML: :class build fade
+   - ~git add~
+     - checksum of content by SHA1 hash
+     - returns SHA
+   - ~git commit~
+     - creates manifest, list of checksum of the content of files, like directory
+       as a ~tree~ and stores hash of the tree in commit object
+     - ~tree~ can be recursive
+   - 3 types of object:
+     1. Commits
+     1. Tree Object
+     1. Blob Object
+** Overview of objects
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_CENTER
+   #+ATTR_HTML: :width 500px
+   [[file:images/objectOverview.png]]
+   #+END_CENTER
+** Commit Object
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+ATTR_HTML: :class build fade
+   - Each commit object contains
+     - tree SHA
+     - parent(s) SHA
+     - date
+     - message
+     - etc
+   - Eg
+    #+BEGIN_SRC shell
+    $ git show bb5802a68eeb67d3f7fe862c7204588c55bc0a62 --pretty=raw
+
+    commit bb5802a68eeb67d3f7fe862c7204588c55bc0a62
+    tree 0cdbd3110b74919b5a4f4d6d9aaa92ac6d85d3c9
+    parent 1ce40e782f41a574fa4579247400275697351669
+    parent 96baa1e399c06e783d979d5811ee30113603e9da
+    author anuja780 <anuja.gupta@coupondunia.in> 1467094050 +0530
+    committer GitHub <noreply@github.com> 1467094050 +0530
+
+    Merge pull request #107 from CouponDunia/common_model_remove
+
+    running camera automated
+    #+END_SRC
+** Tree Object
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_SRC shell
+   $ git ls-tree 0cdbd3110b74919b5a4f4d6d9aaa92ac6d85d3c9
+
+   100644 blob d7ece0cce6f53c128b536de6bf6e876bc9822b04    .gitignore
+   100644 blob c19bf7332ec175bea6fd8b2b83528fdc8720f200    .gitmodules
+   040000 tree c0216114247f276e981159cdbb9e42980cac622f    PriceUpdate
+   100644 blob 3af5e70fa12587720a038200f2a11a7d26bc2e0f    README.md
+   100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    __init__.py
+   100755 blob 3575fca7ccad71b07173dbb92f3774e2c6a6978e    activateEnv.sh
+   040000 tree f34c19c303e460e41829c83c1c56b2ad5e95166b    api
+   040000 tree e6e3194547dc8e2d73ce3e66916894c639a4cf0e    apidoc
+   040000 tree 7027ba82e8c80f5a60cde068e22f44f339a2c596    automation
+   040000 tree 79a60abdbd27701e64eef969d8cdfd3bfb51e1c6    backend
+   040000 tree 2c3ce598bc6679c6012e46400f3231ac2c991123    classes
+   040000 tree a0d2bfe167358576aee258a338eef7d478f125be    config
+   100755 blob e5f15d4b067d979ba8b99ddf933ce115fa294187    crawl.sh
+   ...
+   #+END_SRC
+
+** Blob Object
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+   #+BEGIN_SRC shell
+   $ git show --pretty=raw fa978b8c094bdc3a2fe812ed602db843a1292a92
+
+    #!/bin/bash
+
+    set -e
+
+    BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+    #write out current crontab
+    crontab -l > mycron
+    #echo new cron into cron file
+    echo "#Server is at UTC and we want to run crawler wrt to IST, hence adjust accordingly" >> mycron
+    echo "# 00->18:30, do +3 for hours in peak hours"
+    echo "30 18,00,03,06,09,12,15 * * * $BASE_DIR/crawl.sh update-price" >> mycron
+    #install new cron file
+    crontab mycron
+    rm mycron
+   #+END_SRC
+** GC
+   #+BEGIN_QUOTE
+   Runs a number of housekeeping tasks within the current repository, such as
+   compressing file revisions (to reduce disk space and increase performance) and
+   removing unreachable objects which may have been created from prior invocations
+   of git add.
+   #+END_QUOTE
+   #+BEGIN_SRC shell
+   ls -Rl .git/objects | wc -l
+   #+END_SRC
+* Thanks
+   :PROPERTIES:
+   :ARTICLE:  smaller
+   :END:
+  - References:
+    - [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to Git by Scott Chacon]]
+    - [[http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html][Git Magic]]
+    - [[https://git-scm.com/book/en/v2][Pro Git]]
+  - Summary:
+    | init   | checkout | clone  | merge    |
+    | add    | push     | status | fetch    |
+    | commit | fetch    | commit | pull     |
+    | branch | log      | /show*/ | /ls-tree*/ |
+    \* /for looking into internals/
