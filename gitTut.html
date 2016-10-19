@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- 2016-10-18 Tue 18:00 -->
+<meta  charset="utf-8" />
+<meta  htto-equiv="X-UA-Compatible" content="chrome=1" />
+<meta  name="generator" content="Org-mode with org-ioslide" />
+<meta  name="author" content="Anurag Peshne" />
+
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--This one seems to work all the time, but really small on ipad-->
+<!--<meta name="viewport" content="initial-scale=0.4">-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" media="all" href="theme/css/default.css" />
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css" />
+<link rel="stylesheet" media="all" href="theme/css/small-icon.css" />
+<base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+<script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+</head>
+<body style="opacity: 0">
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+       <aside class="gdbar"><img src="images/git-icon.png"></aside>
+       <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+       <hgroup class="auto-fadein">
+         <h1 data-config-title><!-- populated from slide_config.json --></h1>
+         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+         <p data-config-presenter><!-- populated from slide_config.json --></p>
+       </hgroup>
+    </slide>
+
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline5" class="outline-2">
+<h2 id="orgheadline5">VCS</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline1" class="outline-3">
+<h3 id="orgheadline1">Video Games</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Think of editing your code or document as playing a game</li>
+<li>Saving using Editor over writes previous save
+<ul>
+<li>It's like saving in just one slot</li>
+<li>Can't go back to previous save</li>
+<li>What if current save is unwinnable</li>
+<li>Have to start again from beginning</li>
+</ul></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline2" class="outline-3">
+<h3 id="orgheadline2">Some Cute Things</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/cuteThings.png" alt="cuteThings.png" width="600px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline3" class="outline-3">
+<h3 id="orgheadline3">Save As</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>You can <i>Save as</i> a different file, maybe in different folder</li>
+<li>Multiple versions of same document becomes unmanageable
+<ul>
+<li>Specially if there the number of files is large
+<ul>
+<li>Even a simple project has a little more than 10k files</li>
+</ul></li>
+</ul></li>
+<li>Version Control Systems do this and lot more for us</li>
+<li>If something goes bad, we can re visit older version</li>
+<li>VCS compresses files and provides a nice interface to manage different versions</li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline4" class="outline-3">
+<h3 id="orgheadline4">Distributed Version Control System</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Helps in collaborating</li>
+<li>Everyone has the whole repository in his computer
+<ul>
+<li>No need to checkout particular file (SVN)</li>
+</ul></li>
+<li>On merging all the commits are synchronized automatically</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline9" class="outline-2">
+<h2 id="orgheadline9">Git</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline6" class="outline-3">
+<h3 id="orgheadline6">A little history</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Created by Linus Torvalds</li>
+<li>Some of the goals of the system were:
+<ul>
+<li>Speed</li>
+<li>Simple Design</li>
+<li>Support for non-linear development (thousands of parallel branches)</li>
+<li>Fully Distributed</li>
+<li>Able to handle large projects like the Linux efficiently</li>
+</ul></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline7" class="outline-3">
+<h3 id="orgheadline7">Basics</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Snapshots, not Differences</li>
+<li>Nearly everything is local
+<ul>
+<li>No need of network access for most of the work</li>
+</ul></li>
+<li>Git has integrity
+<ul>
+<li>Everything is hashed</li>
+<li>Data can't get corrupted without git knowing it</li>
+</ul></li>
+<li>No central authority or canonical repository</li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline8" class="outline-3">
+<h3 id="orgheadline8">The three states</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Working Directory</li>
+<li>Staging Area</li>
+<li>Repository</li>
+<li><p>
+Summary
+</p>
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/3states.png" alt="3states.png" width="520px" />
+</p>
+</div>
+</article></li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline18" class="outline-2">
+<h2 id="orgheadline18">Basic Commands</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline10" class="outline-3">
+<h3 id="orgheadline10">Clone/Init</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><p>
+Creating a repository:
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ git init
+Initialized empty Git repository in /mount/pt/dummy/folder
+
+$ ls -a
+. .. .git
+</pre>
+
+</div></li>
+<li><p>
+Cloning an existing repository
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+# clone over https
+git clone https://github.com/dummyUser/dummyRepo.git
+# clone local repo
+git clone ~/code/dummyRepo
+</pre>
+
+</div></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline11" class="outline-3">
+<h3 id="orgheadline11">Editing</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul class="build fade">
+<li><p>
+Status
+</p>
+
+<p>
+<code>git status</code>
+</p></li>
+<li><p>
+Track new files
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+git add newFile1
+git add src*
+</pre>
+
+</div></li>
+<li><p>
+Ignoring files (temp files, editor backup files, db configs)
+</p>
+
+<p>
+<code>.gitignore</code>
+</p></li>
+<li><p>
+See what's changed
+</p>
+
+<p>
+<code>git diff</code>
+</p></li>
+<li><p>
+Undo changes
+</p>
+
+<p>
+<code>git checkout -- file</code>
+</p></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline12" class="outline-3">
+<h3 id="orgheadline12">Committing, Unstaging</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><p>
+Staged wrong file?
+</p>
+
+<p>
+<code>git reset HEAD file</code>
+</p></li>
+<li><p>
+Commit
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+# no flags: opens up editor for commit message
+git commit
+# pass in commit message directly
+git commit -m "message".
+# add and commit all files in previous commits
+git commit -a
+</pre>
+
+</div></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline13" class="outline-3">
+<h3 id="orgheadline13">Conflicts</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;link type="text/css" rel="stylesheet" media="all" href="style.css" /&gt;
+=======
+    &lt;!-- no style --&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; master
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline14" class="outline-3">
+<h3 id="orgheadline14">Push/Pull</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><p>
+Getting latest code
+</p>
+
+<p>
+<code>git pull [remote branch]</code>
+</p></li>
+<li><p>
+Updating github
+</p>
+
+<p>
+<code>git push [remote branch]</code>
+</p></li>
+<li><p>
+Remotes are just aliases.
+</p>
+
+<p>
+<code>git push https://github.com/dummyUser/dummyProject.git master</code>
+</p></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline15" class="outline-3">
+<h3 id="orgheadline15">Undo/Redo</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul class="build fade">
+<li><p>
+Want to see changes
+</p>
+
+<p>
+<code>git log</code>
+</p></li>
+<li><p>
+Undo <b>permanently</b>
+</p>
+
+<p>
+<code>git reset --hard &lt;ref/hash&gt;</code>
+</p></li>
+<li><p>
+Undo commit
+</p>
+
+<p>
+<code>git reset --soft &lt;ref/hash&gt;</code>
+</p></li>
+<li><p>
+Hop to an old state briefly
+</p>
+
+<p>
+<code>git checkout &lt;ref/hash&gt;</code>
+</p></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline16" class="outline-3">
+<h3 id="orgheadline16">Branching</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul class="build fade">
+<li><p>
+Show all branches
+</p>
+
+<p>
+<code>git branch</code>
+</p></li>
+<li><p>
+Switch to another branch
+</p>
+
+<p>
+<code>git checkout &lt;branch&gt;</code>
+</p></li>
+<li><p>
+Create a new branch
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+git branch &lt;new branch name&gt; # this doesn't switches you to the new branch
+git checkout -b &lt;new branch name&gt; #create branch and switch to it
+</pre>
+
+</div></li>
+<li><p>
+Delete branch
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+# deleting local branch
+git branch -D &lt;branchName&gt;
+# deleting remote branch
+git push origin --delete &lt;branchName&gt;
+</pre>
+
+</div></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline17" class="outline-3">
+<h3 id="orgheadline17">Merging</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ol class="build fade">
+<li><p>
+Merge <code>master</code> into your branch
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+git checkout &lt;yourBranch&gt;
+git merge master
+</pre>
+
+</div></li>
+<li>Resolve conflicts (if any)</li>
+<li>Send pull request</li>
+<li>Merge Squash (<code>git merge --squash</code>): create a single commit on top of the
+current branch whose effect is the same as merging another branch</li>
+</ol>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline21" class="outline-2">
+<h2 id="orgheadline21">Demo</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline19" class="outline-3">
+<h3 id="orgheadline19">Visualize</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul>
+<li><a href="http://onlywei.github.io/explain-git-with-d3/#zen">Git Visualization</a>
+<ul>
+<li>git commit</li>
+<li>git branch</li>
+<li>git checkout &lt;branch&gt;</li>
+<li>git checkout &lt;ref&gt;</li>
+<li>git merge</li>
+</ul></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline20" class="outline-3">
+<h3 id="orgheadline20">Github tour</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul>
+<li><a href="https://github.com/jquery/jquery">jQuery project</a>
+<ul>
+<li>clone url</li>
+<li>commits
+<ul>
+<li>summary</li>
+</ul></li>
+<li>branches</li>
+<li>file
+<ul>
+<li>blame</li>
+<li>history</li>
+</ul></li>
+<li>contributors</li>
+<li>License</li>
+</ul></li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline28" class="outline-2">
+<h2 id="orgheadline28">Not So Basic Commands</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline22" class="outline-3">
+<h3 id="orgheadline22">Stash</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ol class="build fade">
+<li><p>
+Working on something and some urgent thing pops up
+</p>
+
+<p>
+<code>git stash #saves the work in the current branch</code>
+</p></li>
+<li>Branch out to another branch</li>
+<li>fix the urgent thing</li>
+<li>merge</li>
+<li>Checkout to old branch</li>
+<li><p>
+Pop
+</p>
+
+<p>
+<code>git stash pop</code>
+</p></li>
+<li>Stash options:
+<ul>
+<li><code>git stash list</code></li>
+<li><code>git stash apply</code></li>
+<li><code>git stash drop</code></li>
+<li><code>pop</code> = <code>apply</code> last + <code>drop</code></li>
+</ul></li>
+</ol>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline23" class="outline-3">
+<h3 id="orgheadline23">Commit Graph</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ git log --graph --decorate --oneline --all﻿
+
+ *   4d19eff Merge branch 'botTest' into alert_system
+ | |\
+ | | *   5cb042b Merge branch 'master' of https://github.com/dummyUser/dummyProject into botTest
+ | | |\
+ | * | \   0e84ec7 Merge remote-tracking branch 'origin/botTest' into alert_system
+ | |\ \ \
+ | | |/ /
+ | * | |   dd8a3c3 Merge branch 'master' of https://github.com/dummyUser/dummyProject into alert_system
+ | |\ \ \
+ | | | |/
+ | | |/|
+ | * | | c1d4e37 alert after crawling stage
+ | * | |   3b9e0ec Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
+ | |\ \ \
+ | | * \ \   39bebf9 Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
+ | | |\ \ \
+ | | * | | | bc9c280 alert for solr
+ | * | | | | 735ef01 operand type fix
+ | | |/ / /
+ | |/| | |
+ | * | | | ee4fe92 ntitle check
+ | * | | | 329f26f removed normalize insertion
+ | |/ / /
+ | * | |   6b4b326 Merge branch 'alert_system' of https://github.com/dummyUser/dummyProject into alert_system
+ | |\ \ \
+ | | * | | f0dfe17 alert for url creator script
+ | * | | | 286d567 check for normalize table data
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline24" class="outline-3">
+<h3 id="orgheadline24">References</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Pointer to commit graph</li>
+<li><p>
+Branches are references:
+</p>
+
+<p>
+<code>more .git/refs/heads</code>
+</p></li>
+<li><p>
+<code>HEAD</code>: symbolic reference to current branch
+</p>
+
+<p>
+<code>more .git/HEAD</code>
+</p></li>
+<li>Tags, like branch, but never moves</li>
+<li><code>FETCH_HEAD</code></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline25" class="outline-3">
+<h3 id="orgheadline25">Remotes</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul class="build fade">
+<li><p>
+Show all remotes
+</p>
+
+<p>
+<code>git remote -v</code>
+</p></li>
+<li><p>
+Adding Remote
+</p>
+
+<p>
+<code>git remote add cd https://github.com/dummyUser/dummyProject.git</code>
+</p></li>
+<li><p>
+Inspect
+</p>
+
+<p>
+<code>git remote show origin</code>
+</p></li>
+<li><p>
+Rename
+</p>
+
+<p>
+<code>git remote rename origin cd</code>
+</p></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline26" class="outline-3">
+<h3 id="orgheadline26">Fetch</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Fetch branches and/or tags (collectively, "refs") from one or more other repositories</li>
+<li>Updates <code>.git/FETCH_HEAD</code></li>
+<li><code>git pull</code> = <code>git fetch</code> + <code>git merge</code></li>
+<li><code>git diff FETCH_HEAD..master</code></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline27" class="outline-3">
+<h3 id="orgheadline27">Ranges</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><code>^</code> : Parent
+<ul>
+<li><code>^^</code>: Parent of parent</li>
+</ul></li>
+<li><code>\~</code>: n<sup>th</sup> parent
+<ul>
+<li><code>git reset --hard HEAD~10</code>: revert to 10th parent of <code>HEAD</code></li>
+</ul></li>
+<li><code>git diff master..HEAD</code>: changes in current branch</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline37" class="outline-2">
+<h2 id="orgheadline37">Git Internals</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline29" class="outline-3">
+<h3 id="orgheadline29"><code>.git</code> structure</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ tree -a -L 2
+ .
+ ├── .git
+ │   ├── COMMIT_EDITMSG
+ │   ├── HEAD
+ │   ├── branches
+ │   ├── config
+ │   ├── description
+ │   ├── hooks
+ │   ├── index
+ │   ├── info
+ │   ├── logs
+ │   ├── objects
+ │   ├── packed-refs
+ │   └── refs
+ └── a.txt
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline30" class="outline-3">
+<h3 id="orgheadline30">How files are stored</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li>Git doesn't store deltas, stores full files in compressed format.</li>
+<li>Hashes the file content and stores in a key-value pair.</li>
+<li><code>git add file</code> compresses and stores the file in <code>.git/objects</code> and updates
+<code>.git/index</code> with its checksum.</li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline31" class="outline-3">
+<h3 id="orgheadline31">Everything is checksum</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<ul class="build fade">
+<li><code>git add</code>
+<ul>
+<li>checksum of content by SHA1 hash</li>
+<li>returns SHA</li>
+</ul></li>
+<li><code>git commit</code>
+<ul>
+<li>creates manifest, list of checksum of the content of files, like directory
+as a <code>tree</code> and stores hash of the tree in commit object</li>
+<li><code>tree</code> can be recursive</li>
+</ul></li>
+<li>3 types of object:
+<ol>
+<li>Commits</li>
+<li>Tree Object</li>
+<li>Blob Object</li>
+</ol></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline32" class="outline-3">
+<h3 id="orgheadline32">Overview of objects</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/objectOverview.png" alt="objectOverview.png" width="500px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline33" class="outline-3">
+<h3 id="orgheadline33">Commit Object</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul class="build fade">
+<li>Each commit object contains
+<ul>
+<li>tree SHA</li>
+<li>parent(s) SHA</li>
+<li>date</li>
+<li>message</li>
+<li>etc</li>
+</ul></li>
+<li><p>
+Eg
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ git show bb5802a68eeb67d3f7fe862c7204588c55bc0a62 --pretty=raw
+
+commit bb5802a68eeb67d3f7fe862c7204588c55bc0a62
+tree 0cdbd3110b74919b5a4f4d6d9aaa92ac6d85d3c9
+parent 1ce40e782f41a574fa4579247400275697351669
+parent 96baa1e399c06e783d979d5811ee30113603e9da
+author anuja780 &lt;anuja.gupta@coupondunia.in&gt; 1467094050 +0530
+committer GitHub &lt;noreply@github.com&gt; 1467094050 +0530
+
+Merge pull request #107 from dummyUser/common_model_remove
+
+running camera automated
+</pre>
+
+</div></li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline34" class="outline-3">
+<h3 id="orgheadline34">Tree Object</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ git ls-tree 0cdbd3110b74919b5a4f4d6d9aaa92ac6d85d3c9
+
+100644 blob d7ece0cce6f53c128b536de6bf6e876bc9822b04    .gitignore
+100644 blob c19bf7332ec175bea6fd8b2b83528fdc8720f200    .gitmodules
+040000 tree c0216114247f276e981159cdbb9e42980cac622f    PriceUpdate
+100644 blob 3af5e70fa12587720a038200f2a11a7d26bc2e0f    README.md
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    __init__.py
+100755 blob 3575fca7ccad71b07173dbb92f3774e2c6a6978e    activateEnv.sh
+040000 tree f34c19c303e460e41829c83c1c56b2ad5e95166b    api
+040000 tree e6e3194547dc8e2d73ce3e66916894c639a4cf0e    apidoc
+040000 tree 7027ba82e8c80f5a60cde068e22f44f339a2c596    automation
+040000 tree 79a60abdbd27701e64eef969d8cdfd3bfb51e1c6    backend
+040000 tree 2c3ce598bc6679c6012e46400f3231ac2c991123    classes
+040000 tree a0d2bfe167358576aee258a338eef7d478f125be    config
+100755 blob e5f15d4b067d979ba8b99ddf933ce115fa294187    crawl.sh
+...
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline35" class="outline-3">
+<h3 id="orgheadline35">Blob Object</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+$ git show --pretty=raw fa978b8c094bdc3a2fe812ed602db843a1292a92
+
+ #!/bin/bash
+
+ set -e
+
+ BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &amp;&amp; pwd )"
+
+ #write out current crontab
+ crontab -l &gt; mycron
+ #echo new cron into cron file
+ echo "#Server is at UTC and we want to run crawler wrt to IST, hence adjust accordingly" &gt;&gt; mycron
+ echo "# 00-&gt;18:30, do +3 for hours in peak hours"
+ echo "30 18,00,03,06,09,12,15 * * * $BASE_DIR/crawl.sh update-price" &gt;&gt; mycron
+ #install new cron file
+ crontab mycron
+ rm mycron
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline36" class="outline-3">
+<h3 id="orgheadline36">GC</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<blockquote>
+<p>
+Runs a number of housekeeping tasks within the current repository, such as
+compressing file revisions (to reduce disk space and increase performance) and
+removing unreachable objects which may have been created from prior invocations
+of git add.
+</p>
+</blockquote>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+ls -Rl .git/objects | wc -l
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/git-icon.png"></aside><hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline39" class="outline-2">
+<h2 id="orgheadline39">Patches</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-">
+
+
+</article>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline38" class="outline-3">
+<h3 id="orgheadline38">The Global Currency</h3>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-">
+<p>
+Patches are both computer and human readable simple to understand.
+You can just send a patch to the maintainer/develpoer as patches do not depend on the version control you use.
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="shell">
+git diff 2a7e &gt; my.patch
+git diff "@{yesterday}"
+git diff 1b6d "master"
+git whatchanged --since="2 weeks ago"
+git diff "@{yesterday}" &gt; my.patch
+
+git apply &lt; my.patch
+git format-patch 2a7e..HEAD^^
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-"  >
+<hgroup class="">
+       <h2 class=" "><div id="outline-container-orgheadline40" class="outline-2">
+<h2 id="orgheadline40">Thanks</h2>
+</div>
+</h2>
+       <h3></h3>
+       </hgroup>
+<article class="smaller" id="text-">
+<ul>
+<li>References:
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ZDR433b0HJY">Introduction to Git by Scott Chacon</a></li>
+<li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html">Git Magic</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git</a></li>
+</ul></li>
+<li><p>
+Summary:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">init</td>
+<td class="left">checkout</td>
+<td class="left">clone</td>
+<td class="left">merge</td>
+</tr>
+
+<tr>
+<td class="left">add</td>
+<td class="left">push</td>
+<td class="left">status</td>
+<td class="left">fetch</td>
+</tr>
+
+<tr>
+<td class="left">commit</td>
+<td class="left">fetch</td>
+<td class="left">commit</td>
+<td class="left">pull</td>
+</tr>
+
+<tr>
+<td class="left">branch</td>
+<td class="left">log</td>
+<td class="left"><i>show*</i></td>
+<td class="left"><i>ls-tree*</i></td>
+</tr>
+</tbody>
+</table>
+<p>
+\* <i>for looking into internals</i>
+</p></li>
+</ul>
+
+
+</article>
+
+</slide>
+<slide class="backdrop"></slide>
+</slides>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>
